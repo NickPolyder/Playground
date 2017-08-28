@@ -73,6 +73,7 @@
     <Compile Include="Tests\Linq.cs" />
     <Compile Include="Tests\Proccesses.cs" />
     <Compile Include="Tests\Recursive.cs" />
+    <Compile Include="Tests\SqlQueries.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

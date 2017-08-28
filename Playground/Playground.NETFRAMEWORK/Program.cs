@@ -22,7 +22,7 @@ namespace Playground.NETFRAMEWORK
         {
             Console.WriteLine("Starting....");
             Console.WriteLine("--------------------------------------------------------------------");
-            Proccesses.ThreadPoolThrowsException();
+            SqlQueries.DynamicSqlQuery().Wait();
             Console.WriteLine("--------------------------------------------------------------------");
             Console.WriteLine("Hit any key to Continue!");
             Console.ReadKey();
