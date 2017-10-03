@@ -7,6 +7,7 @@ namespace Playground.NETCORE.Tests.DI
 {
     public class DITests : ITestCase
     {
+        public bool Enabled { get; } = false;
         public string Name { get; } = "Simple DI Tests";
         public void Run()
         {

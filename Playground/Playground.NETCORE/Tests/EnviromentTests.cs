@@ -4,6 +4,7 @@ namespace Playground.NETCORE.Tests
 {
     public class EnviromentTests : ITestCase
     {
+        public bool Enabled { get; } = true;
         public string Name { get; } = "Enviroment Testing";
 
         public void Run()

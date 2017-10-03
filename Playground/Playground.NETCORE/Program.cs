@@ -21,7 +21,7 @@ namespace Playground.NETCORE
             foreach (var test in tests)
             {
                 var instance = _createInstance(test);
-                if (instance == null) continue;
+                if (instance == null || !instance.Enabled) continue;
                 var testofMax = $"({count++} / {testsCount})";
                 var getLines = Math.Abs(maxLines - instance.Name.Length - testofMax.Length - 1) / 2;
                 var lines = string.Join("", Enumerable.Repeat("-", getLines));
