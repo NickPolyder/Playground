@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using Playground.NETCORE.Models;
 
 namespace Playground.NETCORE.Tests.Expressions
 {
@@ -14,6 +15,9 @@ namespace Playground.NETCORE.Tests.Expressions
             Console.WriteLine("Simple Expression");
             Console.WriteLine(_firstExpresion()?.Invoke());
             Console.WriteLine(_secondExpressions()?.Invoke());
+            Console.WriteLine(_construct<Contact>().ToString());
+            Console.WriteLine(_constructWithParams("Nick Pol","6954444").ToString());
+
         }
 
         private Func<string> _firstExpresion()
@@ -36,11 +40,35 @@ namespace Playground.NETCORE.Tests.Expressions
             var concat = typeof(string).GetMethod("Concat", new[] { typeof(string), typeof(string) });
 
             var concExp = Expression.Call(concat, label, label2);
-            var block = Expression.Block(new[] { label,label2 }, assigned,assigned2,concExp);
+            var block = Expression.Block(new[] { label, label2 }, assigned, assigned2, concExp);
             var func = Expression.Lambda<Func<string>>(block);
 
             Console.WriteLine($"{func}");
             return func.Compile();
+        }
+
+        private T _construct<T>()
+        {
+            var typeT = typeof(T);
+            var newExp = Expression.New(typeT);
+            
+            var func = Expression.Lambda<Func<T>>(newExp);
+            Console.WriteLine($"{func}");
+            return func.Compile().Invoke();
+        }
+
+        private Contact _constructWithParams(string fullname,string phone)
+        {
+            var typeT = typeof(Contact);
+            var newExp = Expression.New(typeT);
+            var fullNameProp = typeT.GetProperty(nameof(Contact.FullName));
+            var phoneProp = typeT.GetProperty(nameof(Contact.Phone));
+            var memberInit = Expression.MemberInit(newExp,
+                Expression.Bind(fullNameProp, Expression.Constant(fullname)),
+                Expression.Bind(phoneProp, Expression.Constant(phone)));
+            var func = Expression.Lambda<Func<Contact>>(memberInit);
+            Console.WriteLine($"{func}");
+            return func.Compile().Invoke();
         }
 
     }

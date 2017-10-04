@@ -5,10 +5,12 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>Playground.NETCORE</AssemblyName>
     <RootNamespace>Playground.NETCORE</RootNamespace>
+    <StartupObject>Playground.NETCORE.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
     <PackageReference Include="System.ValueTuple" Version="4.4.0" />
   </ItemGroup>
 
