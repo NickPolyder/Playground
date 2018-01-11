@@ -8,7 +8,7 @@ namespace Playground.NETCORE.Tests.Expressions
 {
     public class ExpressionTests : ITestCase
     {
-        public bool Enabled { get; } = true;
+        public bool Enabled { get; } = false;
         public string Name { get; } = "Expressions Testing";
         public void Run()
         {
@@ -16,7 +16,7 @@ namespace Playground.NETCORE.Tests.Expressions
             Console.WriteLine(_firstExpresion()?.Invoke());
             Console.WriteLine(_secondExpressions()?.Invoke());
             Console.WriteLine(_construct<Contact>().ToString());
-            Console.WriteLine(_constructWithParams("Nick Pol","6954444").ToString());
+            Console.WriteLine(_constructWithParams("Nick Pol", "6954444").ToString());
 
         }
 
@@ -51,13 +51,13 @@ namespace Playground.NETCORE.Tests.Expressions
         {
             var typeT = typeof(T);
             var newExp = Expression.New(typeT);
-            
+
             var func = Expression.Lambda<Func<T>>(newExp);
             Console.WriteLine($"{func}");
             return func.Compile().Invoke();
         }
 
-        private Contact _constructWithParams(string fullname,string phone)
+        private Contact _constructWithParams(string fullname, string phone)
         {
             var typeT = typeof(Contact);
             var newExp = Expression.New(typeT);

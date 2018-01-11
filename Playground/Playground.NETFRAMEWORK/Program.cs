@@ -17,15 +17,46 @@ namespace Playground.NETFRAMEWORK
 {
     class Program
     {
+        public const string Heart = "♥";
 
+        public enum Strategies { Default, Something, SomethingElse }
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting....");
-            Console.WriteLine("--------------------------------------------------------------------");
-            SqlQueries.DynamicSqlQuery().Wait();
-            Console.WriteLine("--------------------------------------------------------------------");
+
+            var size = 20;
+            Console.OutputEncoding = Encoding.UTF8;
+
+
             Console.WriteLine("Hit any key to Continue!");
             Console.ReadKey();
+        }
+
+        public static void SetStrategy(Strategies strategy = Strategies.Default)
+        {
+            switch (strategy)
+            {
+                case Strategies.Default:
+                    break;
+                case Strategies.Something:
+                    break;
+                case Strategies.SomethingElse:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(strategy), strategy, null);
+            }
+        }
+        public static string CreateContent(string str, int repeat)
+        {
+            if (repeat < 0) throw new ArgumentOutOfRangeException(nameof(repeat), repeat, "Must be above 0");
+
+            StringBuilder builder = new StringBuilder();
+
+            for (int i = 0; i < repeat; i++)
+            {
+                builder.Append(str);
+            }
+
+            return builder.ToString();
         }
 
         #region Tests
@@ -55,7 +86,8 @@ namespace Playground.NETFRAMEWORK
         static void SqlQueryToString()
         {
             var db = new BlogContext();
-            IQueryable<Blog> query = db.Blogs.Where(tt => tt.Id > 100).OrderByDescending(tt => tt.Id);
+            var id = 100;
+            IQueryable<Blog> query = db.Blogs.Where(tt => tt.Id > id).OrderByDescending(tt => tt.Id);
             var sqlString = query.ToString();
             Console.WriteLine(sqlString);
         }

@@ -10,7 +10,7 @@ namespace Playground.NETCORE.Tests.Json
 {
     public class JsonTests : ITestCase
     {
-        public bool Enabled { get; } = true;
+        public bool Enabled { get; } = false;
         public string Name { get; } = "Json Test Case";
         public void Run()
         {
