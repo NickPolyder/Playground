@@ -5,7 +5,7 @@ namespace Playground.NETCORE.Tests.MethodInfo
     public class MethodInfoTests : ITestCase
     {
         /// <inheritdoc />
-        public bool Enabled { get; } = true;
+        public bool Enabled { get; } = false;
 
         /// <inheritdoc />
         public string Name { get; } = "Method Info Tests";
