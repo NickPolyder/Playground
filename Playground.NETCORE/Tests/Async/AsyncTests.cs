@@ -7,7 +7,7 @@ namespace Playground.NETCORE.Tests.Async
     public class AsyncTests : ITestCase
     {
         /// <inheritdoc />
-        public bool Enabled { get; } = true;
+        public bool Enabled { get; } = false;
 
         /// <inheritdoc />
         public string Name { get; } = "Async Tests";
@@ -25,7 +25,7 @@ namespace Playground.NETCORE.Tests.Async
         {
             CancellationTokenSource source = new CancellationTokenSource();
             ConsoleKeyInfo keyboard;
-            var countTask = CountToWithoutTaskRun(10000, source.Token);
+            var countTask = CountToWithYielding(10000 * 10000, source.Token);
             do
             {
                 Console.WriteLine("Hit Enter to cancel the task or Escape to continue: ");
@@ -62,7 +62,7 @@ namespace Playground.NETCORE.Tests.Async
         {
             PrintThread();
             int i;
-            for (i = 0; i < count * 10000; i++)
+            for (i = 0; i < count; i++)
             {
                 await Task.Delay(1000);
                 if (token.IsCancellationRequested)
@@ -72,6 +72,22 @@ namespace Playground.NETCORE.Tests.Async
             Console.WriteLine($"Counted Till: {i}");
 
         }
+
+        public async Task CountToWithYielding(int count, CancellationToken token)
+        {
+            PrintThread();
+            int i;
+            for (i = 0; i < count; i++)
+            {
+                await Task.Yield();
+                if (token.IsCancellationRequested)
+                    break;
+
+            }
+            Console.WriteLine($"Counted Till: {i}");
+
+        }
+
 
         private static void PrintThread()
         {
