@@ -5,7 +5,7 @@ namespace Playground.NETCORE.Tests.Disposable
     public class DisposableTests : ITestCase
     {
 
-        public bool Enabled { get; } = true;
+        public bool Enabled { get; } = false;
         public string Name { get; } = "Disposable Tests";
 
         public void Run()

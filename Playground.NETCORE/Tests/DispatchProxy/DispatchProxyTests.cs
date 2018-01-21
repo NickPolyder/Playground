@@ -5,7 +5,7 @@ namespace Playground.NETCORE.Tests.DispatchProxy
     public class DispatchProxyTests : ITestCase
     {
         /// <inheritdoc />
-        public bool Enabled { get; } = true;
+        public bool Enabled { get; } = false;
 
         /// <inheritdoc />
         public string Name { get; } = "Dispatch Proxy Test";
