@@ -7,7 +7,7 @@ namespace Playground.NETCORE.Tests.SyncContext
     public class SyncContextTests : ITestCase
     {
         /// <inheritdoc />
-        public bool Enabled { get; } = true;
+        public bool Enabled { get; } = false;
 
         /// <inheritdoc />
         public string Name { get; } = "Sync Context";
