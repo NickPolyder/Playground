@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Playground.NETCORE.Logger;
 
 namespace Playground.NETCORE.Tests.ProducerConsumer
 {
@@ -13,10 +12,18 @@ namespace Playground.NETCORE.Tests.ProducerConsumer
         private const string CompleteString = "Complete";
         private const string CancelString = "Cancel";
         /// <inheritdoc />
-        public bool Enabled { get; } = true;
+        public bool Enabled { get; } = false;
 
         /// <inheritdoc />
         public string Name { get; } = "Producer Consumer Tests";
+
+        private readonly ILog _logger;
+
+        public ProducerConsumerTests()
+        {
+            Logger.Logger.Instance.SetStrategy(LoggerType.Console);
+            _logger = Logger.Logger.Instance;
+        }
 
         /// <inheritdoc />
         public void Run()
@@ -27,14 +34,14 @@ namespace Playground.NETCORE.Tests.ProducerConsumer
             var consumer = new ConsumerWithWaitHandle();
             consumer.AddItem(async () =>
             {
-                Console.WriteLine("Before delay");
+                _logger.Information("Before delay");
                 await Task.Delay(5000);
-                Console.WriteLine("After delay");
+                _logger.Information("After delay");
             });
 
             do
             {
-                Console.WriteLine("Write your text.\n" +
+                _logger.Information("Write your text.\n" +
                                   $"'{StartString}' to close the consumer.\n" +
                                   $"'{CompleteString}' to close the consumer.\n" +
                                   $"'{CancelString}' to cancel the token.");
@@ -56,10 +63,10 @@ namespace Playground.NETCORE.Tests.ProducerConsumer
                         AddConsumerItem("https://www.facebook.com", httpClient, consumer);
                         break;
                     default:
-                        consumer.AddItem(() => Console.WriteLine("I Produced: " + read));
+                        consumer.AddItem(() => _logger.Information("I Produced: " + read));
                         break;
                 }
-                Console.WriteLine("Escape for exit.");
+                _logger.Information("Escape for exit.");
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
 
             source.Cancel();
