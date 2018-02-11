@@ -14,6 +14,13 @@ namespace Playground.NETCORE.Logger
         {
             _writer = writer ?? throw new ArgumentNullException(nameof(writer));
         }
+
+        /// <inheritdoc />
+        public void Log(string state, string message)
+        {
+            _writer.WriteLine($"{state}: {message}");
+        }
+
         /// <inheritdoc />
         public void Debug(string message)
         {
