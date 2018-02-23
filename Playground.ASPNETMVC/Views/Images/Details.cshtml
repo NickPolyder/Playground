@@ -1,0 +1,13 @@
+﻿@model Playground.ASPNETMVC.Models.Image
+
+@{ ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Image</h4>
+    <hr />
+    <img src='@Url.Action( "Show", "Images", new { id = Model.Id } )' />    
+</div>
