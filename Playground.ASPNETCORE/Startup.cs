@@ -70,7 +70,7 @@ namespace Playground.ASPNETCORE
             });
             app.UseStaticFiles();
 
-          
+
 
             app.UseMvc(routes =>
             {
