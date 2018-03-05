@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Playground.ASPNETCORE.Models;
 
 namespace Playground.ASPNETCORE
 {
@@ -31,6 +33,7 @@ namespace Playground.ASPNETCORE
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddDbContext<MyDbContext>();
 
             services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
@@ -70,7 +73,7 @@ namespace Playground.ASPNETCORE
             });
             app.UseStaticFiles();
 
-
+            MyDbContext.Seed(app.ApplicationServices.GetRequiredService<MyDbContext>());
 
             app.UseMvc(routes =>
             {
