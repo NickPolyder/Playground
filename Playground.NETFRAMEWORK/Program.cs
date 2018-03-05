@@ -25,8 +25,7 @@ namespace Playground.NETFRAMEWORK
 
             var size = 20;
             Console.OutputEncoding = Encoding.UTF8;
-
-
+            WebRequestTest.Run();
             Console.WriteLine("Hit any key to Continue!");
             Console.ReadKey();
         }

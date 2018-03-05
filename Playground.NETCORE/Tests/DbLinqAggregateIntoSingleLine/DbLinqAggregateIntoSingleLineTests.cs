@@ -7,7 +7,7 @@ namespace Playground.NETCORE.Tests.DbLinqAggregateIntoSingleLine
     public class DbLinqAggregateIntoSingleLineTests : ITestCase
     {
         /// <inheritdoc />
-        public bool Enabled { get; } = true;
+        public bool Enabled { get; } = false;
 
         /// <inheritdoc />
         public string Name { get; } = "Linq: Aggregate Into Single Line (flatten)";
