@@ -7,7 +7,7 @@ namespace Playground.NETCORE.Tests.WebRequestT
     public class WebRequestTest : ITestCase
     {
         /// <inheritdoc />
-        public bool Enabled { get; } = true;
+        public bool Enabled { get; } = false;
 
         /// <inheritdoc />
         public string Name { get; } = "Web Request Tests";
