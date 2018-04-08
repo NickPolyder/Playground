@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Playground.NETFRAMEWORK.Models;
-using Playground.NETFRAMEWORK.Tests;
+using Playground.NETFRAMEWORK.Tests.LinqToXml;
 using Timer = System.Timers.Timer;
 
 // ReSharper disable LocalizableElement
@@ -25,7 +23,7 @@ namespace Playground.NETFRAMEWORK
 
             var size = 20;
             Console.OutputEncoding = Encoding.UTF8;
-            WebRequestTest.Run();
+            LinqToXmlTest.Run();
             Console.WriteLine("Hit any key to Continue!");
             Console.ReadKey();
         }

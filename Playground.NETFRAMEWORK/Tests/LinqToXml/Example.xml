@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Message xmlns:name="http://www.myurl.com/Product" version="010" release="006">
+  <Header>
+    <To Qualifier="P" />
+    <From Qualifier="D" />
+    <MessageID>f244251a8c6c4070</MessageID>
+    <SentTime>2018-03-21T22:01:16.70Z</SentTime>
+  </Header>
+  <Body>
+    <Product>
+      <Description>
+        <Identification>
+          <ID1>1871598417</ID1>
+          <ID2>BE9432042-1234</ID2>
+        </Identification>
+        <Type>
+          <Name>Home Widget</Name>
+          <Category>Residential</Category>
+        </Type>
+      </Description>
+    </Product>
+  </Body>
+</Message>
