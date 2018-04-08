@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Message xmlns:name="http://www.myurl.com/Product" version="010" release="006">
+<Message xmlns="http://www.myurl.com/Product" version="010" release="006">
   <Header>
     <To Qualifier="P" />
     <From Qualifier="D" />
