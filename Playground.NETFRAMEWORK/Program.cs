@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using Newtonsoft.Json;
 using Playground.NETFRAMEWORK.Models;
+using Playground.NETFRAMEWORK.Tests;
 using Playground.NETFRAMEWORK.Tests.LinqToXml;
 using Timer = System.Timers.Timer;
 
@@ -20,10 +21,8 @@ namespace Playground.NETFRAMEWORK
         public enum Strategies { Default, Something, SomethingElse }
         static void Main(string[] args)
         {
-
-            var size = 20;
             Console.OutputEncoding = Encoding.UTF8;
-            LinqToXmlTest.Run();
+            AsciiTests.Run();
             Console.WriteLine("Hit any key to Continue!");
             Console.ReadKey();
         }

@@ -73,6 +73,7 @@
     <Compile Include="Models\Locations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\AsciiTests.cs" />
     <Compile Include="Tests\Linq.cs" />
     <Compile Include="Tests\LinqToXml\LinqToXmlTest.cs" />
     <Compile Include="Tests\Proccesses.cs" />
