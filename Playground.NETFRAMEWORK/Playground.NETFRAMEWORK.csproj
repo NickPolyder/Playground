@@ -74,6 +74,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\Linq.cs" />
+    <Compile Include="Tests\LinqToXml\LinqToXmlTest.cs" />
     <Compile Include="Tests\Proccesses.cs" />
     <Compile Include="Tests\Recursive.cs" />
     <Compile Include="Tests\SqlQueries.cs" />
@@ -90,6 +91,11 @@
     <EmbeddedResource Include="Migrations\201706022215096_Recursive.resx">
       <DependentUpon>201706022215096_Recursive.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tests\LinqToXml\Example.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
