@@ -7,11 +7,9 @@ using System.Threading;
 using Newtonsoft.Json;
 using Playground.NETFRAMEWORK.Models;
 using Playground.NETFRAMEWORK.Tests;
-using Playground.NETFRAMEWORK.Tests.LinqToXml;
 using Timer = System.Timers.Timer;
 
 // ReSharper disable LocalizableElement
-
 namespace Playground.NETFRAMEWORK
 {
     class Program
@@ -22,7 +20,7 @@ namespace Playground.NETFRAMEWORK
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-            AsciiTests.Run();
+            ExpressionTests.Run();
             Console.WriteLine("Hit any key to Continue!");
             Console.ReadKey();
         }
