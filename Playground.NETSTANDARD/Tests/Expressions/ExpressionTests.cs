@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
-using Playground.NETCORE.Models;
+using Playground.NETSTANDARD.Models;
 
-namespace Playground.NETCORE.Tests.Expressions
+namespace Playground.NETSTANDARD.Tests.Expressions
 {
     public class ExpressionTests : ITestCase
     {
-        public bool Enabled { get; } = false;
+        public bool Enabled { get; } = true;
         public string Name { get; } = "Expressions Testing";
         public void Run()
         {
@@ -70,6 +68,7 @@ namespace Playground.NETCORE.Tests.Expressions
             var func = Expression.Lambda<Func<Contact>>(memberInit);
             Console.WriteLine($"{func}");
             return func.Compile().Invoke();
+
         }
 
     }

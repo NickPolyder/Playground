@@ -6,7 +6,7 @@ namespace Playground.NETCORE.Tests.Tasks
     public class TaskTests : ITestCase
     {
         /// <inheritdoc />
-        public bool Enabled { get; } = true;
+        public bool Enabled { get; } = false;
 
         /// <inheritdoc />
         public string Name { get; } = "Task Tests";
