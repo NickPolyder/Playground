@@ -8,7 +8,7 @@ namespace Playground.NETCORE.Tests.Expressions
 {
     public class ExpressionTests : ITestCase
     {
-        public bool Enabled { get; } = true;
+        public bool Enabled { get; } = false;
         public string Name { get; } = "Expressions Testing";
         public void Run()
         {
