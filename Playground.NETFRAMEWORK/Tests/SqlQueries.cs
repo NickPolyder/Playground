@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Playground.NETFRAMEWORK.Models;
+// ReSharper disable All
 
 namespace Playground.NETFRAMEWORK.Tests
 {

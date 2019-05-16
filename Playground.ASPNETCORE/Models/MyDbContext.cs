@@ -17,7 +17,7 @@ namespace Playground.ASPNETCORE.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                "Data Source=DeskNick\\SQLEXPRESS;Initial Catalog=aspnetcore.mvc.playground;Persist Security Info=True;User ID=sqlUser;Password=sqluser1");
+                "Data Source=LaptopNick\\SQLEXPRESS;Initial Catalog=aspnetcore.mvc.playground;Persist Security Info=True;User ID=sqlUser;Password=sqluser1");
         }
 
         public DbSet<Department> Departments { get; set; }

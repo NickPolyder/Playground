@@ -43,6 +43,7 @@ namespace Playground.ASPNETCORE
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+           
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
@@ -74,7 +75,7 @@ namespace Playground.ASPNETCORE
             app.UseStaticFiles();
 
             MyDbContext.Seed(app.ApplicationServices.GetRequiredService<MyDbContext>());
-
+            app.UseMiddleware<StackifyMiddleware.RequestTracerMiddleware>();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
