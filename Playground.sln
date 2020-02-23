@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NETSTANDARD.Runn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.WinForms", "Playground.WinForms\Playground.WinForms.csproj", "{B249DBF7-A23A-4F21-91F2-267B50BC3183}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.StateMachine", "Playground.StateMachine\Playground.StateMachine.csproj", "{AFAEEFD3-915F-4E68-811D-626D168ED046}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{B249DBF7-A23A-4F21-91F2-267B50BC3183}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B249DBF7-A23A-4F21-91F2-267B50BC3183}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B249DBF7-A23A-4F21-91F2-267B50BC3183}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFAEEFD3-915F-4E68-811D-626D168ED046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFAEEFD3-915F-4E68-811D-626D168ED046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFAEEFD3-915F-4E68-811D-626D168ED046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFAEEFD3-915F-4E68-811D-626D168ED046}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

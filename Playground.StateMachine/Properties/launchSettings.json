@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Playground.StateMachine": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "CONSOLE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
