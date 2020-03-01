@@ -12,7 +12,7 @@ namespace Playground.NETCORE.Tests.ProducerConsumer
         private const string CompleteString = "Complete";
         private const string CancelString = "Cancel";
         /// <inheritdoc />
-        public bool Enabled { get; } = true;
+        public bool Enabled { get; } = false;
 
         /// <inheritdoc />
         public string Name { get; } = "Producer Consumer Tests";

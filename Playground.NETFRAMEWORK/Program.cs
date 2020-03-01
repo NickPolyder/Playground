@@ -20,7 +20,7 @@ namespace Playground.NETFRAMEWORK
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-            ExpressionTests.Run();
+            WebClientTests.Run();
             Console.WriteLine("Hit any key to Continue!");
             Console.ReadKey();
         }
