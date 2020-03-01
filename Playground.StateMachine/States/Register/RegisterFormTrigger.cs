@@ -3,6 +3,7 @@
 	public enum RegisterFormTrigger
 	{
 		InitialSubmission,
-		EmailConfirmation
+		EmailConfirmation,
+		Validation
 	}
 }

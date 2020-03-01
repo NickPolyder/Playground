@@ -5,72 +5,59 @@ using Stateless;
 
 namespace Playground.StateMachine.States.Register
 {
-	public class RegisterFormWorkFlow : BaseFormWorkFlow<RegisterForm, RegisterStatus, RegisterFormTrigger>
-	{
-		private readonly IStateCommandFactory<RegisterForm, RegisterStatus, RegisterFormTrigger> _factory;
-		private Dictionary<RegisterStatus, RegisterFormTrigger> _parameters;
+    public interface IRegisterFormWorkFlow : IWorkflow<RegisterForm, RegisterStatus>
+    {
+        void InitialSubmission(RegisterForm form);
+        void EmailConfirmation(RegisterForm form);
+    }
+    public class RegisterFormWorkFlow : BaseFormWorkFlow<RegisterForm, RegisterStatus, RegisterFormTrigger>
+    {
+        private readonly IStateCommandFactory<RegisterForm, RegisterStatus, RegisterFormTrigger> _factory;
 
-		public RegisterFormWorkFlow(IStateCommandFactory<RegisterForm, RegisterStatus, RegisterFormTrigger> factory)
-		{
-			_factory = factory;
-			_parameters = new Dictionary<RegisterStatus, RegisterFormTrigger>();
+        public RegisterFormWorkFlow(IStateCommandFactory<RegisterForm, RegisterStatus, RegisterFormTrigger> factory)
+        {
+            _factory = factory;
 
-			ConfigureStateMachine();
-		}
+        }
 
-		public override RegisterStatus State
-		{
-			get => Form.State;
-			set => Form.State = value;
-		}
+        /// <inheritdoc />
+        protected override StateMachine<RegisterStatus, RegisterFormTrigger> CreateStateMachineFor(RegisterForm form)
+        {
+            var stateMachine = new StateMachine<RegisterStatus, RegisterFormTrigger>(() => form.State, (state) => form.State = state);
+            
+            ConfigureSubmittedStep(stateMachine, form);
 
-		public override void Execute(RegisterForm form)
-		{
-			base.Execute(form);
+            ConfigurePendingEmailConfirmation(stateMachine, form);
 
-			var trigger = _parameters[State];
-			if (StateMachine.CanFire(trigger))
-			{
-				StateMachine.Fire(trigger);
-				return;
-			}
+            return stateMachine;
+        }
 
-			throw new ArgumentException("Cannot do the step");
-		}
 
-		protected void ConfigureStateMachine()
-		{
-			ConfigureSubmittedStep();
+        private void ConfigureSubmittedStep(StateMachine<RegisterStatus, RegisterFormTrigger> stateMachine, RegisterForm form)
+        {
+            var trigger = RegisterFormTrigger.InitialSubmission;
 
-			ConfigurePendingEmailConfirmation();
-		}
+            var submitCommand = _factory.Create(RegisterStatus.Submitted, trigger);
 
-		private void ConfigureSubmittedStep()
-		{
-			var trigger = RegisterFormTrigger.InitialSubmission;
+            stateMachine.Configure(RegisterStatus.Submitted)
+                .PermitIf(trigger, RegisterStatus.PendingEmailConfirmation,
+                    () => submitCommand.CanExecute(form, trigger))
+                .OnExit(() => submitCommand.Execute(form));
 
-			var submitCommand = _factory.Create(RegisterStatus.Submitted, trigger);
 
-			StateMachine.Configure(RegisterStatus.Submitted)
-				.PermitIf(trigger, RegisterStatus.PendingEmailConfirmation,
-					() => submitCommand.CanExecute(Form, trigger))
-				.OnExit(() => submitCommand.Execute(Form));
+        }
 
-			_parameters.Add(RegisterStatus.Submitted, trigger);
-		}
+        private void ConfigurePendingEmailConfirmation(StateMachine<RegisterStatus, RegisterFormTrigger> stateMachine, RegisterForm form)
+        {
+            var trigger = RegisterFormTrigger.EmailConfirmation;
 
-		private void ConfigurePendingEmailConfirmation()
-		{
-			var trigger = RegisterFormTrigger.EmailConfirmation;
+            var submitCommand = _factory.Create(RegisterStatus.PendingEmailConfirmation, trigger);
 
-			var submitCommand = _factory.Create(RegisterStatus.PendingEmailConfirmation, trigger);
+            stateMachine.Configure(RegisterStatus.PendingEmailConfirmation)
+                .OnExit(() => submitCommand.Execute(form))
+                .PermitIf(trigger, RegisterStatus.Completed,
+                    () => submitCommand.CanExecute(form, trigger));
 
-			StateMachine.Configure(RegisterStatus.PendingEmailConfirmation)
-				.OnExit(() => submitCommand.Execute(Form))
-				.PermitIf(trigger, RegisterStatus.Completed,
-					() => submitCommand.CanExecute(Form, trigger));
-
-			_parameters.Add(RegisterStatus.PendingEmailConfirmation, trigger);
-		}
-	}
+        }
+    }
 }

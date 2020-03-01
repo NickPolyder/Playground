@@ -1,9 +1,7 @@
 ﻿namespace Playground.StateMachine.States
 {
-	public interface IWorkflow<TForm, TState>
-	{
-		TState State { get; set; }
-
-		void Execute(TForm form);
-	}
+    public interface IWorkflow<TForm, TAction>
+    {
+        void Execute(TAction action, TForm form);
+    }
 }
