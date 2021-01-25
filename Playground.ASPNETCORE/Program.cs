@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace Playground.ASPNETCORE
 {
@@ -14,6 +15,11 @@ namespace Playground.ASPNETCORE
         public static void Main(string[] args)
         {
             var host = new WebHostBuilder()
+	            .ConfigureLogging(logging =>
+	            {
+		            logging.ClearProviders();
+		            logging.AddConsole();
+	            })
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()

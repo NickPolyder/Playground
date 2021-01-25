@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Localization;
 using Playground.ASPNETCORE.Models;
 
 namespace Playground.ASPNETCORE.Controllers
 {
     public class HomeController : Controller
     {
-        private IHostingEnvironment _env;
-        public HomeController(IHostingEnvironment env)
+        private IWebHostEnvironment _env;
+        public HomeController(IWebHostEnvironment env)
         {
             _env = env;
         }
