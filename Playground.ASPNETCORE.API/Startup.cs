@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +22,12 @@ namespace Playground.ASPNETCORE.API
 		}
 
 		public IConfiguration Configuration { get; }
+
+		// This is the default if you don't have an environment specific method.
+		public void ConfigureContainer(ContainerBuilder builder)
+		{
+			// Add things to the Autofac ContainerBuilder.
+		}
 
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
