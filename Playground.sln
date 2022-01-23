@@ -24,11 +24,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Synchronization"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalR", "SignalR", "{63582F13-A925-4185-A539-851328E6CE24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.SignalR.Shared", "SignalR\Playground.SignalR.Shared\Playground.SignalR.Shared.csproj", "{2870A790-66E8-4D61-9070-BABD7DE05341}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.SignalR.Shared", "SignalR\Playground.SignalR.Shared\Playground.SignalR.Shared.csproj", "{2870A790-66E8-4D61-9070-BABD7DE05341}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.SignalR.Client", "SignalR\Playground.SignalR.Client\Playground.SignalR.Client.csproj", "{26248856-8C04-4101-89A6-133CCF4AA722}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.SignalR.Client", "SignalR\Playground.SignalR.Client\Playground.SignalR.Client.csproj", "{26248856-8C04-4101-89A6-133CCF4AA722}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.SignalR.Server", "SignalR\Playground.SignalR.Server\Playground.SignalR.Server.csproj", "{14A382F2-E601-4A9A-BF1B-19A66A4C843E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.SignalR.Server", "SignalR\Playground.SignalR.Server\Playground.SignalR.Server.csproj", "{14A382F2-E601-4A9A-BF1B-19A66A4C843E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{861A3F3B-054E-4055-AB3F-F993D1103D02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,11 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{F8C52D32-4A9B-4EF5-8E3C-929440AD7622} = {861A3F3B-054E-4055-AB3F-F993D1103D02}
+		{A7DB4D23-B630-489C-ADAF-0416561FC4B3} = {861A3F3B-054E-4055-AB3F-F993D1103D02}
+		{98910D7E-10A8-4160-94EA-1A508C4308BB} = {861A3F3B-054E-4055-AB3F-F993D1103D02}
+		{24F473DD-BEAF-4B8A-9C2E-B35A5D509045} = {861A3F3B-054E-4055-AB3F-F993D1103D02}
+		{7FCB13D1-6C9B-41E6-B05F-29BA5C372533} = {861A3F3B-054E-4055-AB3F-F993D1103D02}
 		{2870A790-66E8-4D61-9070-BABD7DE05341} = {63582F13-A925-4185-A539-851328E6CE24}
 		{26248856-8C04-4101-89A6-133CCF4AA722} = {63582F13-A925-4185-A539-851328E6CE24}
 		{14A382F2-E601-4A9A-BF1B-19A66A4C843E} = {63582F13-A925-4185-A539-851328E6CE24}
