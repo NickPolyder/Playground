@@ -22,8 +22,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NET5", "Console\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Synchronization", "Playground.Synchronization\Playground.Synchronization.csproj", "{4B42AE0F-BAE3-4ABE-9129-7AAC4FD86BD7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalR", "SignalR", "{63582F13-A925-4185-A539-851328E6CE24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Synchronization", "Playground.Synchronization\Playground.Synchronization.csproj", "{4B42AE0F-BAE3-4ABE-9129-7AAC4FD86BD7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.SignalR.Shared", "SignalR\Playground.SignalR.Shared\Playground.SignalR.Shared.csproj", "{2870A790-66E8-4D61-9070-BABD7DE05341}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.SignalR.Client", "SignalR\Playground.SignalR.Client\Playground.SignalR.Client.csproj", "{26248856-8C04-4101-89A6-133CCF4AA722}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.SignalR.Server", "SignalR\Playground.SignalR.Server\Playground.SignalR.Server.csproj", "{14A382F2-E601-4A9A-BF1B-19A66A4C843E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,9 +64,26 @@ Global
 		{4B42AE0F-BAE3-4ABE-9129-7AAC4FD86BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B42AE0F-BAE3-4ABE-9129-7AAC4FD86BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B42AE0F-BAE3-4ABE-9129-7AAC4FD86BD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2870A790-66E8-4D61-9070-BABD7DE05341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2870A790-66E8-4D61-9070-BABD7DE05341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2870A790-66E8-4D61-9070-BABD7DE05341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2870A790-66E8-4D61-9070-BABD7DE05341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26248856-8C04-4101-89A6-133CCF4AA722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26248856-8C04-4101-89A6-133CCF4AA722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26248856-8C04-4101-89A6-133CCF4AA722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26248856-8C04-4101-89A6-133CCF4AA722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A382F2-E601-4A9A-BF1B-19A66A4C843E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A382F2-E601-4A9A-BF1B-19A66A4C843E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A382F2-E601-4A9A-BF1B-19A66A4C843E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A382F2-E601-4A9A-BF1B-19A66A4C843E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2870A790-66E8-4D61-9070-BABD7DE05341} = {63582F13-A925-4185-A539-851328E6CE24}
+		{26248856-8C04-4101-89A6-133CCF4AA722} = {63582F13-A925-4185-A539-851328E6CE24}
+		{14A382F2-E601-4A9A-BF1B-19A66A4C843E} = {63582F13-A925-4185-A539-851328E6CE24}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A936482-D34C-469E-8AA3-12C72072B03B}
