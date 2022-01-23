@@ -1,30 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28729.10
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NETCORE", "Playground.NETCORE\Playground.NETCORE.csproj", "{F8C52D32-4A9B-4EF5-8E3C-929440AD7622}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NETCORE", "Console\Playground.NETCORE\Playground.NETCORE.csproj", "{F8C52D32-4A9B-4EF5-8E3C-929440AD7622}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NETFRAMEWORK", "Playground.NETFRAMEWORK\Playground.NETFRAMEWORK.csproj", "{A7DB4D23-B630-489C-ADAF-0416561FC4B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NETFRAMEWORK", "Console\Playground.NETFRAMEWORK\Playground.NETFRAMEWORK.csproj", "{A7DB4D23-B630-489C-ADAF-0416561FC4B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{205CD32F-26E2-4157-9123-F1290644F686}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NETSTANDARD", "Playground.NETSTANDARD\Playground.NETSTANDARD.csproj", "{98910D7E-10A8-4160-94EA-1A508C4308BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NETSTANDARD", "Console\Playground.NETSTANDARD\Playground.NETSTANDARD.csproj", "{98910D7E-10A8-4160-94EA-1A508C4308BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NETSTANDARD.Runner", "Playground.NETSTANDARD.Runner\Playground.NETSTANDARD.Runner.csproj", "{24F473DD-BEAF-4B8A-9C2E-B35A5D509045}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NETSTANDARD.Runner", "Console\Playground.NETSTANDARD.Runner\Playground.NETSTANDARD.Runner.csproj", "{24F473DD-BEAF-4B8A-9C2E-B35A5D509045}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.StateMachine", "Playground.StateMachine\Playground.StateMachine.csproj", "{AFAEEFD3-915F-4E68-811D-626D168ED046}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NET5", "Playground.NET5\Playground.NET5.csproj", "{7FCB13D1-6C9B-41E6-B05F-29BA5C372533}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.ASPNETCORE.API", "Playground.ASPNETCORE.API\Playground.ASPNETCORE.API.csproj", "{E3100524-1268-4DEE-828D-569288F84044}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.ASPNETCORE", "Playground.ASPNETCORE\Playground.ASPNETCORE.csproj", "{994BCE81-0D0D-4516-91FC-F3036786B64E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NET5", "Console\Playground.NET5\Playground.NET5.csproj", "{7FCB13D1-6C9B-41E6-B05F-29BA5C372533}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Synchronization", "Playground.Synchronization\Playground.Synchronization.csproj", "{4B42AE0F-BAE3-4ABE-9129-7AAC4FD86BD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalR", "SignalR", "{63582F13-A925-4185-A539-851328E6CE24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.SignalR.Shared", "SignalR\Playground.SignalR.Shared\Playground.SignalR.Shared.csproj", "{2870A790-66E8-4D61-9070-BABD7DE05341}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.SignalR.Client", "SignalR\Playground.SignalR.Client\Playground.SignalR.Client.csproj", "{26248856-8C04-4101-89A6-133CCF4AA722}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.SignalR.Server", "SignalR\Playground.SignalR.Server\Playground.SignalR.Server.csproj", "{14A382F2-E601-4A9A-BF1B-19A66A4C843E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,21 +60,30 @@ Global
 		{7FCB13D1-6C9B-41E6-B05F-29BA5C372533}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FCB13D1-6C9B-41E6-B05F-29BA5C372533}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FCB13D1-6C9B-41E6-B05F-29BA5C372533}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E3100524-1268-4DEE-828D-569288F84044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3100524-1268-4DEE-828D-569288F84044}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3100524-1268-4DEE-828D-569288F84044}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3100524-1268-4DEE-828D-569288F84044}.Release|Any CPU.Build.0 = Release|Any CPU
-		{994BCE81-0D0D-4516-91FC-F3036786B64E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{994BCE81-0D0D-4516-91FC-F3036786B64E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{994BCE81-0D0D-4516-91FC-F3036786B64E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{994BCE81-0D0D-4516-91FC-F3036786B64E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4B42AE0F-BAE3-4ABE-9129-7AAC4FD86BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4B42AE0F-BAE3-4ABE-9129-7AAC4FD86BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B42AE0F-BAE3-4ABE-9129-7AAC4FD86BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B42AE0F-BAE3-4ABE-9129-7AAC4FD86BD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2870A790-66E8-4D61-9070-BABD7DE05341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2870A790-66E8-4D61-9070-BABD7DE05341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2870A790-66E8-4D61-9070-BABD7DE05341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2870A790-66E8-4D61-9070-BABD7DE05341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26248856-8C04-4101-89A6-133CCF4AA722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26248856-8C04-4101-89A6-133CCF4AA722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26248856-8C04-4101-89A6-133CCF4AA722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26248856-8C04-4101-89A6-133CCF4AA722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A382F2-E601-4A9A-BF1B-19A66A4C843E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A382F2-E601-4A9A-BF1B-19A66A4C843E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A382F2-E601-4A9A-BF1B-19A66A4C843E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A382F2-E601-4A9A-BF1B-19A66A4C843E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2870A790-66E8-4D61-9070-BABD7DE05341} = {63582F13-A925-4185-A539-851328E6CE24}
+		{26248856-8C04-4101-89A6-133CCF4AA722} = {63582F13-A925-4185-A539-851328E6CE24}
+		{14A382F2-E601-4A9A-BF1B-19A66A4C843E} = {63582F13-A925-4185-A539-851328E6CE24}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A936482-D34C-469E-8AA3-12C72072B03B}
