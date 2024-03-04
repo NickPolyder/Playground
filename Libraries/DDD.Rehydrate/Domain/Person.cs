@@ -17,7 +17,7 @@
             _licenses = new List<License>();
         }
 
-        public void Rehydrate(IEnumerable<License> entities)
+        void IRehydrate<IEnumerable<License>>.Rehydrate(IEnumerable<License> entities)
         {
             _licenses.Clear();
             _licenses.AddRange(entities);
