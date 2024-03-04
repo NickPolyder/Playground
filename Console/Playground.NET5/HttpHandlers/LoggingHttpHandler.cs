@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
-namespace Playground.NET5.HttpHandlers
+namespace Playground.NET.HttpHandlers
 {
 	public class LoggingHttpHandler : DelegatingHandler
 	{

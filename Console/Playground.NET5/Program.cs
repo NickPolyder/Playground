@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using Playground.NET5.HttpHandlers;
+using Playground.NET.HttpHandlers;
 
-namespace Playground.NET5
+namespace Playground.NET
 {
 	class Program
 	{
@@ -11,9 +10,13 @@ namespace Playground.NET5
 		{
 			Console.WriteLine("Hello World!");
 
-			await HttpClientFactoryExample.Run();
+			//await HttpClientFactoryExample.Run();
 
+            string? value = null;
+
+		   
 			Console.ReadKey();
 		}
 	}
+
 }

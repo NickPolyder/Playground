@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Playground.NET5
+namespace Playground.NET
 {
 	public class Example
 	{

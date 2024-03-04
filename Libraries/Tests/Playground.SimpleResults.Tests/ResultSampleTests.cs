@@ -109,7 +109,7 @@ public class ResultSampleTests
         Assert.True(result.Code == 200, "Code ?");
         Assert.IsType<Result<ResultSample.Order>>(result);
         Assert.True(result.HasValue, "Has Value ?");
-        Assert.True(result.Value.OrderId == createdOrder.Value, "Order Id ?");
+        Assert.True(result.Value!.OrderId == createdOrder.Value, "Order Id ?");
         Assert.True(result.Value.UserId == userId, "User Id ?");
         Assert.True(result.Value.ProductIds.All(val => productIds.Contains(val)), "Product Id ?");
     }

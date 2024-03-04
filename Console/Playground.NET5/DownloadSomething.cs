@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Playground.NET5
+namespace Playground.NET
 {
 	public class DownloadSomething
 	{

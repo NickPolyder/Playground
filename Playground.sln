@@ -18,7 +18,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NETSTANDARD.Runn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.StateMachine", "Playground.StateMachine\Playground.StateMachine.csproj", "{AFAEEFD3-915F-4E68-811D-626D168ED046}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NET5", "Console\Playground.NET5\Playground.NET5.csproj", "{7FCB13D1-6C9B-41E6-B05F-29BA5C372533}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.NET", "Console\Playground.NET5\Playground.NET.csproj", "{7FCB13D1-6C9B-41E6-B05F-29BA5C372533}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Synchronization", "Playground.Synchronization\Playground.Synchronization.csproj", "{4B42AE0F-BAE3-4ABE-9129-7AAC4FD86BD7}"
 EndProject
@@ -32,13 +32,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.SignalR.Server",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{861A3F3B-054E-4055-AB3F-F993D1103D02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.SimpleResults", "Libraries\Playground.SimpleResults\Playground.SimpleResults.csproj", "{0998C30E-318E-4632-9D57-EF79EE045832}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.SimpleResults", "Libraries\Playground.SimpleResults\Playground.SimpleResults.csproj", "{0998C30E-318E-4632-9D57-EF79EE045832}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{CAC4B7A0-98A0-4E69-8D0D-0930F42D64EB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0F8D1284-A629-416C-ABF3-D9B0A3E18700}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.SimpleResults.Tests", "Libraries\Tests\Playground.SimpleResults.Tests\Playground.SimpleResults.Tests.csproj", "{A1988CA2-EB50-4E3C-B54D-B8F67F366C38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.SimpleResults.Tests", "Libraries\Tests\Playground.SimpleResults.Tests\Playground.SimpleResults.Tests.csproj", "{A1988CA2-EB50-4E3C-B54D-B8F67F366C38}"
+EndProject
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
