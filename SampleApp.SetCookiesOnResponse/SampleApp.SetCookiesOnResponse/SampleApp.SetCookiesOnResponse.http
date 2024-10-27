@@ -1,0 +1,11 @@
+@SampleApp.SetCookiesOnResponse_HostAddress = http://localhost:5030
+
+GET {{SampleApp.SetCookiesOnResponse_HostAddress}}/weatherforecast/
+Accept: application/json
+
+### Set Cookie
+
+POST {{SampleApp.SetCookiesOnResponse_HostAddress}}/weatherforecast/
+Content-Type: application/json
+
+"YourCookieValue"

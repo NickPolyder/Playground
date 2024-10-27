@@ -1,0 +1,38 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div class="text-center">
+    
+    <h1>Set Cookie</h1>
+    <input type="text" id="cookieValue" placeholder="Enter cookie value">
+    <button onclick="setCookie()">Set Cookie</button>
+
+    <script>
+        function setCookie() {
+            const cookieValue = document.getElementById('cookieValue').value;
+
+            fetch('https://localhost:7014/weatherforecast', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: '"' + cookieValue + '"',
+                credentials: 'include' // This is important!
+            })
+            .then(async data => {
+                console.log(data);
+                alert('Cookie set: ' + await data.text());
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</div>
